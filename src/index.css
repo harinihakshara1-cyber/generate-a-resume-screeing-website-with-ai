@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #070311;
+  color: #ece7ff;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Aurora background used behind the whole app */
+.aurora {
+  background:
+    radial-gradient(60% 55% at 15% 10%, rgba(168, 85, 247, 0.28), transparent 60%),
+    radial-gradient(50% 50% at 85% 5%, rgba(34, 211, 238, 0.22), transparent 60%),
+    radial-gradient(55% 60% at 80% 80%, rgba(255, 106, 213, 0.20), transparent 60%),
+    radial-gradient(60% 60% at 25% 90%, rgba(99, 102, 241, 0.18), transparent 60%);
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, #ff6ad5, #a855f7 40%, #22d3ee 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(14px);
+}
+
+.glass-strong {
+  background: linear-gradient(180deg, rgba(20, 10, 48, 0.8), rgba(12, 6, 32, 0.78));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+}
+
+.card-glow {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 30px 80px -40px rgba(168, 85, 247, 0.55);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0620;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#a855f7, #22d3ee);
+  border-radius: 999px;
+  border: 2px solid #0c0620;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animated conic ring for score meter fallback */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 22s linear infinite;
+}
+
+.grid-mask {
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 40%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 40%, transparent 75%);
+}
